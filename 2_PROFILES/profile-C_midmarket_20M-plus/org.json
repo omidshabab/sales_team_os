@@ -1,0 +1,12 @@
+{
+  "team": [
+    {"role": "Head of Sales", "fte": 1, "manager": "CEO"},
+    {"role": "Sales Manager", "fte": 2, "manager": "Head of Sales"},
+    {"role": "AE", "fte": 6, "manager": "Sales Manager"},
+    {"role": "SDR", "fte": 4, "manager": "Sales Manager"},
+    {"role": "RevOps", "fte": 1, "manager": "Head of Sales"},
+    {"role": "CSM", "fte": 3, "manager": "Head of Sales"}
+  ],
+  "notes": "Midmarket motion with multi-stakeholder processes and rigorous forecasting."
+}
+

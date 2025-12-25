@@ -1,0 +1,9 @@
+item,owner,due_day
+Create accounts,RevOps,1
+Load templates,RevOps,1
+Connect calendar,RevOps,1
+Import CRM fields,RevOps,1
+Build dashboards,RevOps,2
+Set KPI targets,Head of Sales,2
+Run micro-lessons,Manager,3
+

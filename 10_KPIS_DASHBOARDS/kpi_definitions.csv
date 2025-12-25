@@ -1,0 +1,10 @@
+KPI,formula,frequency,target_A,target_B,target_C,leading/lagging,sample_calc_A,sample_calc_B,sample_calc_C
+Leads,"leads_count per week",weekly,30,60,120,leading,"Example: 6 days * 5 leads/day = 30","Example: 6 days * 10 leads/day = 60","Example: 6 days * 20 leads/day = 120"
+SQLs,"qualified_meetings per week",weekly,8,15,25,leading,"Example: 4 SDRs * 2 SQLs = 8","Example: 5 SDRs * 3 SQLs = 15","Example: 5 SDRs * 5 SQLs = 25"
+Win Rate,"wins / opportunities",monthly,0.20,0.25,0.30,lagging,"A: 2 wins / 10 opps = 0.20","B: 5 wins / 20 opps = 0.25","C: 12 wins / 40 opps = 0.30"
+ACV,"booked_amount / deals",monthly,10000,20000,40000,lagging,"A: $50k / 5 = $10k","B: $200k / 10 = $20k","C: $800k / 20 = $40k"
+Pipeline Coverage,"pipeline_value / quota",weekly,3.0,3.0,3.0,leading,"A: $180k / $60k = 3.0","B: $600k / $200k = 3.0","C: $3M / $1M = 3.0"
+Sales Cycle Days,"avg_days_to_close",monthly,45,60,75,lagging,"A: (sum days)/wins = 45","B: ... = 60","C: ... = 75"
+Touches to Meeting,"total_touches / meetings",weekly,20,18,15,leading,"A: 200 touches / 10 mtgs = 20","B: 270 / 15 = 18","C: 300 / 20 = 15"
+Demo-to-Close Rate,"closed_won / demos",monthly,0.20,0.25,0.30,lagging,"A: 2 / 10 = 0.20","B: 5 / 20 = 0.25","C: 9 / 30 = 0.30"
+

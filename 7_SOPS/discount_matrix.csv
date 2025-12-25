@@ -1,0 +1,7 @@
+tier,min_seats,max_seats,max_discount,notes
+1,1,10,0,No discount
+2,11,25,5,Small volume discount
+3,26,100,10,Standard volume discount
+4,101,250,15,Enterprise volume discount
+5,251,100000,20,Strategic exception requires approval
+

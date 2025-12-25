@@ -1,0 +1,50 @@
+month,role,headcount,cost_usd
+Jan,SDR,2,8000
+Jan,AE,3,30000
+Jan,Sales Manager,1,12000
+Jan,RevOps (part-time),0.5,6000
+Feb,SDR,2,8000
+Feb,AE,3,30000
+Feb,Sales Manager,1,12000
+Feb,RevOps (part-time),0.5,6000
+Mar,SDR,2,8000
+Mar,AE,3,30000
+Mar,Sales Manager,1,12000
+Mar,RevOps (part-time),0.5,6000
+Apr,SDR,2,8000
+Apr,AE,3,30000
+Apr,Sales Manager,1,12000
+Apr,RevOps (part-time),0.5,6000
+May,SDR,2,8000
+May,AE,3,30000
+May,Sales Manager,1,12000
+May,RevOps (part-time),0.5,6000
+Jun,SDR,2,8000
+Jun,AE,3,30000
+Jun,Sales Manager,1,12000
+Jun,RevOps (part-time),0.5,6000
+Jul,SDR,2,8000
+Jul,AE,3,30000
+Jul,Sales Manager,1,12000
+Jul,RevOps (part-time),0.5,6000
+Aug,SDR,2,8000
+Aug,AE,3,30000
+Aug,Sales Manager,1,12000
+Aug,RevOps (part-time),0.5,6000
+Sep,SDR,2,8000
+Sep,AE,3,30000
+Sep,Sales Manager,1,12000
+Sep,RevOps (part-time),0.5,6000
+Oct,SDR,2,8000
+Oct,AE,3,30000
+Oct,Sales Manager,1,12000
+Oct,RevOps (part-time),0.5,6000
+Nov,SDR,2,8000
+Nov,AE,3,30000
+Nov,Sales Manager,1,12000
+Nov,RevOps (part-time),0.5,6000
+Dec,SDR,2,8000
+Dec,AE,3,30000
+Dec,Sales Manager,1,12000
+Dec,RevOps (part-time),0.5,6000
+

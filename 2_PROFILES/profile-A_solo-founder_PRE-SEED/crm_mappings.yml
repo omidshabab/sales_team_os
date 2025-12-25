@@ -1,0 +1,15 @@
+Title: CRM Mappings — Profile A
+Owner role: RevOps
+Last updated: 2025-12-25
+Purpose: Light CRM schema for founder-led motion.
+How to use (1-2 lines): Import this minimal set to Pipedrive or HubSpot Starter.
+
+lead_fields:
+  - name: lead_source
+    type: picklist
+    values: [inbound, outbound]
+opportunity_fields:
+  - name: stage
+    type: picklist
+    values: [discovery, demo, proposal, closed_won, closed_lost]
+

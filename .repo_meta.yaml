@@ -1,0 +1,10 @@
+name: sales-team-os
+owner_role: RevOps Lead
+last_updated: 2025-12-25
+purpose: Production-ready offline sales system repository
+version: 1.0.0
+profiles:
+  - profile-A_solo-founder_PRE-SEED
+  - profile-B_scaleup_1M-20M
+  - profile-C_midmarket_20M-plus
+

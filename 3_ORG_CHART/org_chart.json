@@ -1,0 +1,47 @@
+{
+  "roles": [
+    {
+      "title": "Head of Sales",
+      "fte": 1,
+      "manager": "CEO",
+      "responsibilities": ["Own revenue target", "Hire and coach", "Forecasting"],
+      "seniority": "Director"
+    },
+    {
+      "title": "Sales Manager",
+      "fte": 1,
+      "manager": "Head of Sales",
+      "responsibilities": ["Pipeline reviews", "1:1 coaching", "Process adherence"],
+      "seniority": "Manager"
+    },
+    {
+      "title": "Account Executive (AE)",
+      "fte": 3,
+      "manager": "Sales Manager",
+      "responsibilities": ["Discovery", "Demo", "Proposal", "Negotiation", "Closing"],
+      "seniority": "Senior/Intermediate"
+    },
+    {
+      "title": "Sales Development Rep (SDR)",
+      "fte": 2,
+      "manager": "Sales Manager",
+      "responsibilities": ["Outbound prospecting", "Qualification", "Meeting booking"],
+      "seniority": "Junior"
+    },
+    {
+      "title": "Customer Success Manager (CSM)",
+      "fte": 2,
+      "manager": "Head of Sales",
+      "responsibilities": ["Onboarding", "Renewals", "Expansion"],
+      "seniority": "Intermediate"
+    },
+    {
+      "title": "Revenue Operations (RevOps)",
+      "fte": 1,
+      "manager": "Head of Sales",
+      "responsibilities": ["CRM admin", "Automation", "Reporting"],
+      "seniority": "Intermediate"
+    }
+  ]
+}
+

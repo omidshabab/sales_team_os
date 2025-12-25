@@ -1,0 +1,9 @@
+KPI,formula,frequency,target,sample_calc
+Leads,"6 days * 5/day",weekly,30,"6*5=30"
+SQLs,"2 meetings/day * 4 days",weekly,8,"2*4=8"
+Win Rate,"wins/opps",monthly,0.20,"2/10=0.20"
+ACV,"booked/ deals",monthly,10000,"50000/5=10000"
+Pipeline Coverage,"pipeline/quota",weekly,3.0,"180000/60000=3.0"
+Sales Cycle Days,"avg days",monthly,45,"225/5=45"
+Demo-to-Close Rate,"wins/demos",monthly,0.20,"2/10=0.20"
+

@@ -1,0 +1,62 @@
+month,role,headcount,cost_usd
+Jan,SDR,4,16000
+Jan,AE,6,60000
+Jan,Sales Manager,2,24000
+Jan,RevOps,1,12000
+Jan,CSM,3,21000
+Feb,SDR,4,16000
+Feb,AE,6,60000
+Feb,Sales Manager,2,24000
+Feb,RevOps,1,12000
+Feb,CSM,3,21000
+Mar,SDR,4,16000
+Mar,AE,6,60000
+Mar,Sales Manager,2,24000
+Mar,RevOps,1,12000
+Mar,CSM,3,21000
+Apr,SDR,4,16000
+Apr,AE,6,60000
+Apr,Sales Manager,2,24000
+Apr,RevOps,1,12000
+Apr,CSM,3,21000
+May,SDR,4,16000
+May,AE,6,60000
+May,Sales Manager,2,24000
+May,RevOps,1,12000
+May,CSM,3,21000
+Jun,SDR,4,16000
+Jun,AE,6,60000
+Jun,Sales Manager,2,24000
+Jun,RevOps,1,12000
+Jun,CSM,3,21000
+Jul,SDR,4,16000
+Jul,AE,6,60000
+Jul,Sales Manager,2,24000
+Jul,RevOps,1,12000
+Jul,CSM,3,21000
+Aug,SDR,4,16000
+Aug,AE,6,60000
+Aug,Sales Manager,2,24000
+Aug,RevOps,1,12000
+Aug,CSM,3,21000
+Sep,SDR,4,16000
+Sep,AE,6,60000
+Sep,Sales Manager,2,24000
+Sep,RevOps,1,12000
+Sep,CSM,3,21000
+Oct,SDR,4,16000
+Oct,AE,6,60000
+Oct,Sales Manager,2,24000
+Oct,RevOps,1,12000
+Oct,CSM,3,21000
+Nov,SDR,4,16000
+Nov,AE,6,60000
+Nov,Sales Manager,2,24000
+Nov,RevOps,1,12000
+Nov,CSM,3,21000
+Dec,SDR,4,16000
+Dec,AE,6,60000
+Dec,Sales Manager,2,24000
+Dec,RevOps,1,12000
+Dec,CSM,3,21000
+

@@ -1,0 +1,11 @@
+{
+  "team": [
+    {"role": "Head of Sales", "fte": 1, "manager": "CEO"},
+    {"role": "Sales Manager", "fte": 1, "manager": "Head of Sales"},
+    {"role": "AE", "fte": 3, "manager": "Sales Manager"},
+    {"role": "SDR", "fte": 2, "manager": "Sales Manager"},
+    {"role": "RevOps", "fte": 0.5, "manager": "Head of Sales"}
+  ],
+  "notes": "Team motion with cadence discipline and dashboards."
+}
+

@@ -1,0 +1,8 @@
+{
+  "team": [
+    {"role": "Founder-CEO", "fte": 1, "manager": "Board"},
+    {"role": "AE (contract)", "fte": 0.5, "manager": "Founder-CEO"}
+  ],
+  "notes": "Founder-led sales motion with optional contractor support."
+}
+

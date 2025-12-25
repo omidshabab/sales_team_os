@@ -1,0 +1,2 @@
+POST /webhook/lead_status?lead_id={{lead.id}}&status={{new_status}}&owner={{owner.email}}
+
