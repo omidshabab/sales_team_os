@@ -58,7 +58,7 @@
   <text class="role" x="590" y="435" text-anchor="middle">Owner: CSM</text>
 
   <rect class="stage" x="760" y="380" width="220" height="80" rx="8" />
-  <text class="label" x="870" y="415" text-anchor="middle">Renewal & Expansion</text>
+  <text class="label" x="870" y="415" text-anchor="middle">Renewal &amp; Expansion</text>
   <text class="role" x="870" y="435" text-anchor="middle">Owner: CSM+AE</text>
 
   <!-- Arrows -->
@@ -76,4 +76,3 @@
   <line class="arrow" x1="660" y1="100" x2="1080" y2="220" />
   <text class="label" x="990" y="160" text-anchor="middle">If No → Close Lost</text>
 </svg>
-
