@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Funnel Visualization</title>
+    <meta name="description" content="Interactive funnel showing volumes and conversion rates by profile across sales stages." />
+    <style>
+      :root { --primary:#1E88E5; --secondary:#43A047; --accent:#FB8C00; --neutral:#455A64; --light:#ECEFF1; }
+      body { font-family: system-ui, sans-serif; margin: 16px; }
+      h1 { color: var(--primary); }
+      #chart { width: 800px; height: 500px; border: 1px solid var(--neutral); background: #fff; position: relative; }
+      .bar { position: absolute; left: 50px; height: 50px; background: var(--primary); color: #fff; display: flex; align-items: center; padding-left: 8px; border-radius: 6px; }
+      .label { position: absolute; left: 10px; color: var(--neutral); }
+      .note { font-size: 12px; color: var(--neutral); }
+      .sr-only { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <h1 aria-label="Sales Funnel Visualization">Sales Funnel</h1>
+    <p>Select a profile to view funnel volumes and conversion rates.</p>
+    <label for="profile">Profile</label>
+    <select id="profile" aria-label="Select company profile">
+      <option value="A">A — Solo Founder (Pre-Seed)</option>
+      <option value="B">B — Scaleup ($1M–$20M)</option>
+      <option value="C">C — Midmarket ($20M+)</option>
+    </select>
+    <div id="chart" role="img" aria-labelledby="alt">
+      <span id="alt" class="sr-only">Funnel bars for leads, SQLs, discovery, demo, proposal, negotiation, closed-won.</span>
+    </div>
+    <p class="note">Assumptions: Conversions inferred from KPIs and typical stage rates; adjust in data block.</p>
+    <script>
+      // Base weekly volumes from KPIs (kpi_definitions.csv)
+      const BASE = {
+        A: { leads: 30, sqls: 8 },
+        B: { leads: 60, sqls: 15 },
+        C: { leads: 120, sqls: 25 }
+      };
+      // Stage conversion assumptions (adjust as needed)
+      const CONV = {
+        A: { sql_to_disc: 0.9, disc_to_demo: 0.8, demo_to_prop: 0.7, prop_to_neg: 0.7, neg_to_won: 0.29 },
+        B: { sql_to_disc: 0.92, disc_to_demo: 0.82, demo_to_prop: 0.72, prop_to_neg: 0.72, neg_to_won: 0.34 },
+        C: { sql_to_disc: 0.94, disc_to_demo: 0.84, demo_to_prop: 0.74, prop_to_neg: 0.74, neg_to_won: 0.36 }
+      };
+      const STAGES = ["Leads","SQLs","Discovery","Demo","Proposal","Negotiation","Closed Won"];
+
+      function compute(profile) {
+        const b = BASE[profile];
+        const c = CONV[profile];
+        const vols = [];
+        const sqls = b.sqls;
+        vols.push(b.leads);
+        vols.push(sqls);
+        const disc = Math.round(sqls * c.sql_to_disc);
+        const demo = Math.round(disc * c.disc_to_demo);
+        const prop = Math.round(demo * c.demo_to_prop);
+        const neg = Math.round(prop * c.prop_to_neg);
+        const won = Math.round(neg * c.neg_to_won);
+        vols.push(disc, demo, prop, neg, won);
+        return vols;
+      }
+
+      function render(profile) {
+        const chart = document.getElementById("chart");
+        chart.innerHTML = "";
+        const vols = compute(profile);
+        const max = Math.max(...vols);
+        vols.forEach((v, i) => {
+          const y = 20 + i * 65;
+          const w = Math.max(50, 700 * (v / max));
+          const bar = document.createElement("div");
+          bar.className = "bar";
+          bar.style.top = y + "px";
+          bar.style.width = w + "px";
+          bar.style.background = i < vols.length - 1 ? "#1E88E5" : "#43A047";
+          bar.textContent = `${STAGES[i]}: ${v}`;
+          const label = document.createElement("div");
+          label.className = "label";
+          label.style.top = (y + 15) + "px";
+          label.textContent = STAGES[i];
+          chart.appendChild(bar);
+        });
+      }
+      render("A");
+      document.getElementById("profile").addEventListener("change", e => render(e.target.value));
+    </script>
+  </body>
+</html>
+

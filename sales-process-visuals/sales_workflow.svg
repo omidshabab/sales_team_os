@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" role="img" aria-labelledby="title desc">
+  <title id="title">Sales Workflow Diagram</title>
+  <desc id="desc">End-to-end sales process from lead capture to renewal with roles and decision points.</desc>
+  <style>
+    .stage { fill: #ECEFF1; stroke: #455A64; stroke-width: 2; }
+    .decision { fill: #FB8C00; stroke: #455A64; stroke-width: 2; }
+    .arrow { stroke: #1E88E5; stroke-width: 2; marker-end: url(#arrowhead); }
+    .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #263238; }
+    .role { font-family: system-ui, sans-serif; font-size: 12px; fill: #43A047; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1E88E5" />
+    </marker>
+  </defs>
+  <!-- Stages -->
+  <rect class="stage" x="40" y="60" width="220" height="80" rx="8" />
+  <text class="label" x="150" y="95" text-anchor="middle">Lead Capture</text>
+  <text class="role" x="150" y="115" text-anchor="middle">Owner: SDR/RevOps</text>
+
+  <rect class="stage" x="320" y="60" width="220" height="80" rx="8" />
+  <text class="label" x="430" y="95" text-anchor="middle">Qualification</text>
+  <text class="role" x="430" y="115" text-anchor="middle">Owner: SDR</text>
+
+  <polygon class="decision" points="600,60 660,100 600,140 540,100"/>
+  <text class="label" x="600" y="105" text-anchor="middle">Qualified?</text>
+
+  <rect class="stage" x="700" y="60" width="220" height="80" rx="8" />
+  <text class="label" x="810" y="95" text-anchor="middle">Discovery</text>
+  <text class="role" x="810" y="115" text-anchor="middle">Owner: AE</text>
+
+  <rect class="stage" x="980" y="60" width="220" height="80" rx="8" />
+  <text class="label" x="1090" y="95" text-anchor="middle">Demo</text>
+  <text class="role" x="1090" y="115" text-anchor="middle">Owner: AE</text>
+
+  <rect class="stage" x="200" y="220" width="220" height="80" rx="8" />
+  <text class="label" x="310" y="255" text-anchor="middle">Proposal</text>
+  <text class="role" x="310" y="275" text-anchor="middle">Owner: AE</text>
+
+  <rect class="stage" x="480" y="220" width="220" height="80" rx="8" />
+  <text class="label" x="590" y="255" text-anchor="middle">Negotiation</text>
+  <text class="role" x="590" y="275" text-anchor="middle">Owner: AE</text>
+
+  <rect class="stage" x="760" y="220" width="220" height="80" rx="8" />
+  <text class="label" x="870" y="255" text-anchor="middle">Close Won</text>
+  <text class="role" x="870" y="275" text-anchor="middle">Owner: AE</text>
+
+  <rect class="stage" x="1040" y="220" width="220" height="80" rx="8" />
+  <text class="label" x="1150" y="255" text-anchor="middle">Close Lost</text>
+  <text class="role" x="1150" y="275" text-anchor="middle">Owner: AE</text>
+
+  <rect class="stage" x="200" y="380" width="220" height="80" rx="8" />
+  <text class="label" x="310" y="415" text-anchor="middle">CSM Handoff</text>
+  <text class="role" x="310" y="435" text-anchor="middle">Owner: AE+CSM</text>
+
+  <rect class="stage" x="480" y="380" width="220" height="80" rx="8" />
+  <text class="label" x="590" y="415" text-anchor="middle">Onboarding</text>
+  <text class="role" x="590" y="435" text-anchor="middle">Owner: CSM</text>
+
+  <rect class="stage" x="760" y="380" width="220" height="80" rx="8" />
+  <text class="label" x="870" y="415" text-anchor="middle">Renewal & Expansion</text>
+  <text class="role" x="870" y="435" text-anchor="middle">Owner: CSM+AE</text>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="260" y1="100" x2="320" y2="100" />
+  <line class="arrow" x1="540" y1="100" x2="700" y2="100" />
+  <line class="arrow" x1="920" y1="100" x2="980" y2="100" />
+  <line class="arrow" x1="1090" y1="140" x2="590" y2="220" />
+  <line class="arrow" x1="420" y1="260" x2="480" y2="260" />
+  <line class="arrow" x1="700" y1="260" x2="760" y2="260" />
+  <line class="arrow" x1="820" y1="300" x2="310" y2="380" />
+  <line class="arrow" x1="420" y1="420" x2="480" y2="420" />
+  <line class="arrow" x1="700" y1="420" x2="760" y2="420" />
+
+  <!-- Branch: Unqualified -->
+  <line class="arrow" x1="660" y1="100" x2="1080" y2="220" />
+  <text class="label" x="990" y="160" text-anchor="middle">If No → Close Lost</text>
+</svg>
+

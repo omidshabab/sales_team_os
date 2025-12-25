@@ -10,5 +10,4 @@ How to use (1-2 lines): Review before customizing; update as you refine the org,
 - Markets: English-speaking geographies; compliance needs minimal; SMB/Midmarket focus.
 - Capacity assumptions: SDR 50 touches/day; AE 3–5 demos/week; Manager 1:8 ratio.
 - Data: No external links required; dashboards use pseudo-SQL and local CSV catalog.
-- If any item cannot be created, it is noted here; at present all items are created offline.
-
+- If any item cannot be created, it is noted here. PNG/PDF infographics are not generated due to binary file constraints in this environment; high-fidelity SVG and HTML assets are provided in `/sales-process-visuals/`. To produce PNG/PDF, open the HTML/SVG in a browser and use “Print to PDF” or export via an SVG-to-PNG tool.

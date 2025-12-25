@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Journey Map</title>
+    <meta name="description" content="Customer touchpoints, emotions, pain points, and conversion moments across the sales journey." />
+    <style>
+      :root {
+        --primary: #1E88E5;
+        --secondary: #43A047;
+        --accent: #FB8C00;
+        --neutral: #455A64;
+        --light: #ECEFF1;
+      }
+      body { font-family: system-ui, sans-serif; margin: 16px; }
+      h1 { color: var(--primary); }
+      .grid { display: grid; grid-template-columns: 180px 1fr 1fr 1fr 1fr; gap: 8px; align-items: start; }
+      .cell { border: 1px solid var(--neutral); background: var(--light); padding: 8px; border-radius: 6px; }
+      .stage { background: #fff; border: 2px solid var(--primary); font-weight: 600; }
+      .legend { margin-top: 12px; font-size: 12px; color: var(--neutral); }
+      button { margin: 8px 4px; }
+      .sr-only { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <h1 aria-label="Customer Journey Map">Customer Journey Map</h1>
+    <p>Use the profile selector to view touchpoints, emotional states, and key interactions.</p>
+    <label for="profile">Profile</label>
+    <select id="profile" aria-label="Select company profile">
+      <option value="A">A — Solo Founder (Pre-Seed)</option>
+      <option value="B">B — Scaleup ($1M–$20M)</option>
+      <option value="C">C — Midmarket ($20M+)</option>
+    </select>
+    <div class="legend">Legend: Touchpoints (calls, emails, LinkedIn), Emotions (curiosity, risk), Conversions (SQL, demo, close).</div>
+
+    <div id="grid" class="grid" role="table" aria-label="Journey grid">
+      <div class="cell stage" role="columnheader">Stages</div>
+      <div class="cell stage" role="columnheader">Lead Capture</div>
+      <div class="cell stage" role="columnheader">Discovery</div>
+      <div class="cell stage" role="columnheader">Demo</div>
+      <div class="cell stage" role="columnheader">Proposal → Close</div>
+
+      <div class="cell" role="rowheader">Touchpoints</div>
+      <div class="cell" id="tp1"></div>
+      <div class="cell" id="tp2"></div>
+      <div class="cell" id="tp3"></div>
+      <div class="cell" id="tp4"></div>
+
+      <div class="cell" role="rowheader">Emotions</div>
+      <div class="cell" id="em1"></div>
+      <div class="cell" id="em2"></div>
+      <div class="cell" id="em3"></div>
+      <div class="cell" id="em4"></div>
+
+      <div class="cell" role="rowheader">Conversion Moments</div>
+      <div class="cell" id="cv1"></div>
+      <div class="cell" id="cv2"></div>
+      <div class="cell" id="cv3"></div>
+      <div class="cell" id="cv4"></div>
+    </div>
+
+    <button id="toggleHighRisk" aria-pressed="false">Highlight High-Risk Moments</button>
+    <p class="sr-only" id="altText">Customer journey visualization with stages, touchpoints, emotions, and conversion moments per profile.</p>
+
+    <script>
+      const DATA = {
+        A: {
+          touchpoints: [
+            "Inbound form or warm intro; 1 email follow-up",
+            "20-min discovery; 1 recap email",
+            "20-min demo; agenda + proof",
+            "Proposal email; negotiation call; e-sign"
+          ],
+          emotions: [
+            "Curious, cautious",
+            "Hopeful, skeptical",
+            "Engaged, risk-aware",
+            "Decisive, risk-reduction"
+          ],
+          conversions: [
+            "MQL→SQL",
+            "SQL→Opportunity",
+            "Demo completed",
+            "Closed Won or Lost"
+          ],
+          riskIdx: [1, 2, 2, 3]
+        },
+        B: {
+          touchpoints: [
+            "Outbound cadence (email/LinkedIn/call)",
+            "30-min discovery; multi-stakeholder notes",
+            "30-min demo; tailored flows",
+            "Formal proposal; negotiation; legal"
+          ],
+          emotions: [
+            "Interested, busy",
+            "Aligned, concerned",
+            "Inspired, budget-aware",
+            "Committed, legal scrutiny"
+          ],
+          conversions: [
+            "Reply→SQL",
+            "SQL→Opportunity",
+            "Demo completed",
+            "Closed Won or Lost"
+          ],
+          riskIdx: [2, 2, 2, 3]
+        },
+        C: {
+          touchpoints: [
+            "Outbound + referral; SDR touches",
+            "Multi-stakeholder discovery; MAP",
+            "Demo(s) to stakeholders; ROI",
+            "Proposal, procurement, security; CPQ"
+          ],
+          emotions: [
+            "Neutral, risk-averse",
+            "Aligned, political",
+            "Positive, proof-seeking",
+            "Cautious, compliance-driven"
+          ],
+          conversions: [
+            "Engagement→SQL",
+            "SQL→Opportunity",
+            "Demo completed",
+            "Closed Won or Lost"
+          ],
+          riskIdx: [2, 3, 2, 3]
+        }
+      };
+
+      const ids = [["tp1","tp2","tp3","tp4"],["em1","em2","em3","em4"],["cv1","cv2","cv3","cv4"]];
+      function render(profile) {
+        const d = DATA[profile];
+        d.touchpoints.forEach((t, i) => document.getElementById(ids[0][i]).textContent = t);
+        d.emotions.forEach((e, i) => document.getElementById(ids[1][i]).textContent = e);
+        d.conversions.forEach((c, i) => document.getElementById(ids[2][i]).textContent = c);
+      }
+      render("A");
+      document.getElementById("profile").addEventListener("change", e => render(e.target.value));
+
+      const btn = document.getElementById("toggleHighRisk");
+      btn.addEventListener("click", () => {
+        const pressed = btn.getAttribute("aria-pressed") === "true";
+        btn.setAttribute("aria-pressed", String(!pressed));
+        const profile = document.getElementById("profile").value;
+        const d = DATA[profile];
+        d.riskIdx.forEach((r, i) => {
+          const cell = document.getElementById(ids[1][i]); // emotions row
+          cell.style.background = r >= 3 ? "#FFCDD2" : (r === 2 ? "#FFF9C4" : "#C8E6C9");
+        });
+      });
+    </script>
+  </body>
+</html>
+
